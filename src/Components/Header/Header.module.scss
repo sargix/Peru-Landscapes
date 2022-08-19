@@ -1,0 +1,65 @@
+@import '../../Assets/Styles/Variables.module.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12vh;
+  background-color: transparent;
+  color: $font-color-primary;
+  z-index: 20;
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%) rotate(0deg);
+    cursor: pointer;
+    transition: 0.4s;
+    color: $font-color-primary;
+    &:hover {
+      transform: translateY(-50%) rotate(360deg);
+    }
+    @media (min-width: $breakpoint-phone) {
+      font-size: 30px;
+    }
+    @media (min-width: $breakpoint-large-phone) {
+      font-size: 40px;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 50px;
+    }
+    @media (min-width: $breakpoint-small-desktop) {
+      font-size: 65px;
+    }
+  }
+  @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+    height: 15vh;
+  }
+  @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+    height: 16vh;
+  }
+  @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
+    height: 13vh;
+  }
+}
+
+.title {
+  position: absolute;
+  top: 2vh;
+  left: 5%;
+  color: $font-color-primary;
+  z-index: 20;
+  @media (min-width: $breakpoint-phone) {
+    font-size: 20px;
+  }
+  @media (min-width: $breakpoint-large-phone) {
+    font-size: 24px;
+  }
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 35px;
+  }
+  @media (min-width: $breakpoint-small-desktop) {
+    font-size: 50px;
+  }
+}

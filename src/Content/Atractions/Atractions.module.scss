@@ -1,0 +1,291 @@
+@import '../../Assets/Styles/Variables.module.scss';
+
+@mixin selectImageAtraction($num_img) {
+  background-image: url('../../Assets/images/atractions/' + $num_img + '.jpg');
+}
+
+.atractions {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  z-index: 10;
+  &__title {
+    text-align: center;
+    color: $font-color-primary;
+    padding-top: 15px;
+    text-shadow: 2px 2px 5px black;
+    @media (min-width: $breakpoint-phone) {
+      font-size: 30px;
+    }
+    @media (min-width: $breakpoint-large-phone) {
+      font-size: 35px;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 45px;
+    }
+    @media (min-width: $breakpoint-small-desktop) {
+      font-size: 50px;
+    }
+  }
+  &__articles {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__article {
+    position: relative;
+    width: 35%;
+    height: 50vh;
+    margin-bottom: 4rem;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 35px 5px rgb(0, 0, 0);
+    &:nth-of-type(even) {
+      margin-left: 65%;
+      border-radius: 20px 0 0 20px;
+      .atractions__articleWrap {
+        border-radius: 20px 0 0 20px;
+      }
+      @media (min-width: $breakpoint-phone) and (orientation: portrait) {
+        margin-left: 55%;
+      }
+      @media (min-width: $breakpoint-large-phone) and (orientation: portrait) {
+        margin-left: 55%;
+      }
+      @media (min-width: $breakpoint-tablet) and (orientation: portrait) {
+        margin-left: 55%;
+      }
+      @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+        margin-left: 60%;
+      }
+      @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+        margin-left: 60%;
+      }
+      @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
+        margin-left: 60%;
+      }
+      @media (min-width: $breakpoint-small-desktop) and (orientation: landscape) {
+        margin-left: 65%;
+      }
+      @media (min-width: $breakpoint-large-desktop) and (orientation: landscape) {
+        // margin-left: 55%;
+      }
+    }
+    &:nth-of-type(odd) {
+      margin-left: 0;
+      border-radius: 0 20px 20px 0;
+      .atractions__articleWrap {
+        border-radius: 0 20px 20px 0;
+      }
+    }
+    @media (min-width: $breakpoint-phone) and (orientation: portrait) {
+      width: 45%;
+    }
+    @media (min-width: $breakpoint-large-phone) and (orientation: portrait) {
+      width: 45%;
+    }
+    @media (min-width: $breakpoint-tablet) and (orientation: portrait) {
+      width: 45%;
+    }
+    @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+      width: 40%;
+    }
+    @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+      width: 40%;
+    }
+    @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
+      width: 40%;
+    }
+    @media (min-width: $breakpoint-small-desktop) and (orientation: landscape) {
+      width: 35%;
+    }
+    @media (min-width: $breakpoint-large-desktop) and (orientation: landscape) {
+      // width: 45%;
+    }
+    &:nth-of-type(1) {
+      @include selectImageAtraction(1);
+    }
+    &:nth-of-type(2) {
+      @include selectImageAtraction(2);
+    }
+    &:nth-of-type(3) {
+      @include selectImageAtraction(3);
+    }
+    &:nth-of-type(4) {
+      @include selectImageAtraction(4);
+    }
+    &:nth-of-type(5) {
+      @include selectImageAtraction(5);
+    }
+    &:nth-of-type(6) {
+      @include selectImageAtraction(6);
+    }
+  }
+  &__articleWrap {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__articleSlider {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    opacity: 0;
+    box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 1);
+    border-radius: 3rem;
+    background-color: #555;
+    &Even {
+      left: 120%;
+    }
+    &Odd {
+      right: 120%;
+    }
+    &ActiveEven {
+      opacity: 1;
+    }
+    &ActiveOdd {
+      opacity: 1;
+    }
+    @media (min-width: $breakpoint-phone) and (orientation: portrait) {
+      width: 95%;
+    }
+    @media (min-width: $breakpoint-large-phone) and (orientation: portrait) {
+      width: 95%;
+    }
+    @media (min-width: $breakpoint-tablet) and (orientation: portrait) {
+      width: 95%;
+    }
+    @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+      width: 100%;
+    }
+    @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+      width: 100%;
+    }
+    @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
+      width: 100%;
+    }
+    @media (min-width: $breakpoint-small-desktop) and (orientation: landscape) {
+      width: 100%;
+    }
+    @media (min-width: $breakpoint-large-desktop) and (orientation: landscape) {
+      // width: 100%;
+    }
+  }
+  &__titleArticle {
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    font-size: 2rem;
+    @media (min-width: $breakpoint-phone) {
+      font-size: 1.6rem;
+    }
+    @media (min-width: $breakpoint-large-phone) {
+      font-size: 2rem;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 2.6rem;
+    }
+    @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+      font-size: 1.5rem;
+    }
+    @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+      font-size: 2rem;
+    }
+    @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
+      font-size: 2.6rem;
+    }
+    @media (min-width: $breakpoint-small-desktop) {
+      font-size: 2.7rem;
+    }
+    @media (min-width: $breakpoint-large-desktop) and (orientation: landscape) {
+      // font-size: 2.7rem;
+    }
+  }
+  &__descriptionArticle {
+    color: white;
+    display: block;
+    text-align: center;
+    @media (min-width: $breakpoint-phone) and (orientation: portrait) {
+      width: 90%;
+      font-size: 0.76rem;
+    }
+    @media (min-width: $breakpoint-large-phone) and (orientation: portrait) {
+      width: 90%;
+      font-size: 0.9rem;
+    }
+    @media (min-width: $breakpoint-tablet) and (orientation: portrait) {
+      width: 90%;
+      font-size: 1.5rem;
+    }
+    @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+      width: 90%;
+      font-size: 0.7rem;
+    }
+    @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+      width: 90%;
+      font-size: 1rem;
+    }
+    @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
+      width: 90%;
+      font-size: 1.5rem;
+    }
+    @media (min-width: $breakpoint-small-desktop) and (orientation: landscape) {
+      width: 90%;
+      font-size: 1.4rem;
+    }
+    @media (min-width: $breakpoint-large-desktop) and (orientation: landscape) {
+      // width: 45%;
+    }
+  }
+  &__articleIcon {
+    color: white;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: 0.3s;
+    &ActiveOdd {
+      transform: rotate(180deg);
+    }
+    &ActiveEven {
+      transform: rotate(-180deg);
+    }
+    @media (min-width: $breakpoint-phone) {
+      font-size: 3rem;
+    }
+    @media (min-width: $breakpoint-large-phone) {
+      font-size: 3.5rem;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 4.5rem;
+    }
+    @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+      font-size: 2.5rem;
+    }
+    @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+      font-size: 3.2rem;
+    }
+    @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
+      font-size: 4.5rem;
+    }
+    @media (min-width: $breakpoint-small-desktop) {
+      font-size: 5rem;
+    }
+    @media (min-width: $breakpoint-large-desktop) and (orientation: landscape) {
+      // font-size: 5rem;
+    }
+  }
+}

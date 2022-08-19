@@ -1,0 +1,102 @@
+@import '../../Assets/Styles/Variables.module.scss';
+
+@mixin selectImage($num_img) {
+  @media screen and (min-width: $breakpoint-phone) {
+    background-image: url('../../Assets/images/phone/' + $num_img + 'p.jpg');
+  }
+  @media screen and (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+    background-image: url('../../Assets/images/phone-landscape/' + $num_img + 'pl.jpg');
+  }
+  @media screen and (min-width: $breakpoint-tablet) {
+    background-image: url('../../Assets/images/tablet/' + $num_img + 't.jpg');
+  }
+  @media screen and (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+    background-image: url('../../Assets/images/tablet-landscape/' + $num_img + 'tl.jpg');
+  }
+  @media screen and (min-width: $breakpoint-small-desktop) {
+    background-image: url('../../Assets/images/small-desktop/' + $num_img + 'sd.jpg');
+  }
+  @media screen and (min-width: $breakpoint-large-desktop) {
+    background-image: url('../../Assets/images/large-desktop/' + $num_img + 'ld.jpg');
+  }
+}
+
+.start {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+  &__wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -5;
+  }
+  &__title {
+    font-size: 40px;
+    color: $font-color-primary;
+    opacity: 1;
+  }
+  &__bg_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    &:nth-child(1) {
+      @include selectImage(1);
+      animation: slider 20s infinite;
+      z-index: -10;
+      opacity: 0;
+    }
+    &:nth-child(2) {
+      @include selectImage(2);
+      animation: slider 20s infinite 4s;
+      z-index: -11;
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      @include selectImage(3);
+      animation: slider 20s infinite 8s;
+      z-index: -12;
+      opacity: 0;
+    }
+    &:nth-child(4) {
+      @include selectImage(4);
+      animation: slider 20s infinite 12s;
+      z-index: -13;
+      opacity: 0;
+    }
+    &:nth-child(5) {
+      @include selectImage(5);
+      animation: slider 20s infinite 16s;
+      z-index: -14;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes slider {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
