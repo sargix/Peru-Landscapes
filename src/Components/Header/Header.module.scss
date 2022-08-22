@@ -13,12 +13,12 @@
     position: absolute;
     top: 50%;
     right: 5%;
-    transform: translateY(-50%) rotate(0deg);
+    transform: translateY(-50%) scale(1);
     cursor: pointer;
     transition: 0.4s;
     color: $font-color-primary;
     &:hover {
-      transform: translateY(-50%) rotate(360deg);
+      transform: translateY(-50%) scale(1.1);
     }
     @media (min-width: $breakpoint-phone) {
       font-size: 30px;

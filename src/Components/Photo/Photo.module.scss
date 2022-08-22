@@ -13,52 +13,23 @@
   background-color: rgba(0, 0, 0, 0.3);
   &__wrap {
     position: fixed;
-    width: 92%;
-    left: 4%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
-    @media (min-width: $breakpoint-phone) and (orientation: portrait) {
-      height: 88vh;
-      bottom: 10vh;
-    }
-    @media (min-width: $breakpoint-large-phone) and (orientation: portrait) {
-      height: 88vh;
-      bottom: 10vh;
-    }
-    @media (min-width: $breakpoint-tablet) and (orientation: portrait) {
-      height: 88vh;
-      bottom: 10vh;
-    }
-    @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
-      height: 80vh;
-      bottom: 15vh;
-    }
-    @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
-      height: 80vh;
-      bottom: 15vh;
-    }
-    @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
-      height: 85vh;
-      bottom: 11vh;
-    }
-    @media (min-width: $breakpoint-small-desktop) and (orientation: landscape) {
-      height: 87vh;
-      bottom: 10vh;
-    }
-    @media (min-width: $breakpoint-large-desktop) and (orientation: landscape) {
-      height: 87vh;
-      bottom: 10vh;
-    }
   }
   &__img {
+    position: absolute;
     width: 90%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 20px;
+    border: 3px solid white;
     @media (min-width: $breakpoint-phone) and (orientation: portrait) {
       height: 40vh;
     }
@@ -69,18 +40,23 @@
       height: 50vh;
     }
     @media (min-width: $breakpoint-phone-landscape) and (orientation: landscape) {
+      top: 10%;
       height: 70vh;
     }
     @media (min-width: $breakpoint-large-phone-landscape) and (orientation: landscape) {
+      top: 10%;
       height: 70vh;
     }
     @media (min-width: $breakpoint-tablet-landscape) and (orientation: landscape) {
+      top: 7%;
       height: 78vh;
     }
     @media (min-width: $breakpoint-small-desktop) and (orientation: landscape) {
+      top: 7%;
       height: 80vh;
     }
     @media (min-width: $breakpoint-large-desktop) and (orientation: landscape) {
+      top: 8%;
       height: 80vh;
     }
   }
@@ -104,6 +80,7 @@
     justify-content: center;
     transform: translateX(-50%);
     color: white;
+    z-index: 10;
     @media (min-width: $breakpoint-phone) and (orientation: portrait) {
       width: 7vh;
       height: 7vh;
