@@ -4,7 +4,7 @@ import { gsap } from 'gsap/all';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from 'Context/AppContext';
-import { menuItems } from 'Data/menuItems';
+import { menuItems } from 'Components/Menu/menuItems';
 import styles from 'Components/Menu/Menu.module.scss';
 
 const Menu = () => {
